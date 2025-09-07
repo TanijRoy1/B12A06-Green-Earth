@@ -1,23 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>B12A06-Green-Earth</title>
     <!-- daisyUI + tailwindcss -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/daisyui@5"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- vanila css  -->
     <link rel="stylesheet" href="css/style.css">
-  </head>
-  <body>
-    <div class=""></div>
+</head>
+
+<body class="bg-[#DCFCE7]">
+    <header>
+        <nav class="bg-[#15803D]">
+            <div class="navbar w-11/12 mx-auto shadow-sm py-3.5">
+                <div class="navbar-start">
+                    <div class="dropdown">
+                        <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M4 6h16M4 12h8m-8 6h16" />
+                            </svg>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            <li><a class="font-medium">About</a></li>
+                            <li><a class="font-medium">Gallery</a></li>
+                            <li><a class="font-medium">Plant a Tree</a></li>
+                        </ul>
+                    </div>
+                    <a class="text-2xl text-white font-semibold">Green Earth</a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal px-1 text-white">
+                        <li><a class="font-medium">About</a></li>
+                        <li><a class="font-medium">Gallery</a></li>
+                        <li><a class="font-medium">Plant a Tree</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end">
+                    <a
+                        class="bg-[#FACC15] text-[#15803D] px-5 py-3 text-xl font-semibold rounded-4xl cursor-pointer hover:bg-[#d4ab07]">Plant
+                        a Tree
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Banner Section  -->
+        <section class="bannder-section flex items-center justify-between bg-[#CFF0DC] gap-5">
+            <div class="">
+                <img src="./assets/hero-leaf1.png" alt="hero-leaf1">
+            </div>
+            <div class="text-center flex flex-col gap-4">
+                <h1 class="text-[#1F2937] font-bold text-4xl">Plant a Tree, Grow a Future</h1>
+                <p class="text-[#1F2937] font-medium">
+                    Join our mission to plant 1 million trees and make the Earth greener for future generations.
+                </p>
+                <button
+                    class="bg-[#FACC15] text-[#15803D] px-5 py-3 text-xl font-semibold rounded-4xl self-center cursor-pointer hover:bg-[#d4ab07]">Get
+                    Involved</button>
+            </div>
+            <div>
+                <img src="./assets/hero-leaf2.png" alt="hero-leaf2">
+            </div>
+        </section>
+    </header>
+
+    <main class="w-11/12 mx-auto">
+        <!-- main section  -->
+        <section class="main py-6">
+            <h1 class="text-center py-6 text-[#1F2937] text-2xl font-semibold">Choose Your Trees</h1>
+            <div class="grid grid-cols-5 gap-3">
+                <aside class="">
+                    <h1 class="text-2xl font-medium">Categories</h1>
+                    <ul id="category-container" class="py-4">
+                        <!-- <li onclick="loadPlants()"
+                            class="text-xl font-medium mt-1 py-2.5 px-2 rounded cursor-pointer hover:bg-[#15803D] hover:text-white">
+                            Fruit Tree
+                        </li> -->
+            
+                    </ul>
+                </aside>
+                <!-- card section  -->
+                <section id="items-container" class="col-span-3 grid grid-cols-3 gap-3 items-stretch">
+
+                    <!-- <div class="item rounded-xl bg-white p-4 flex flex-col gap-4 h-full">
+                        <img src="" class="w-[100%] rounded-xl object-cover flex-1" alt="">
+                        <h1 class="text-[#1F2937] font-semibold text-xl cursor-pointer">Mango Tree</h1>
+                        <p class="font-medium text-[#1F2937]">
+                            A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense
+                            green
+                        </p>
+                        <div class="flex items-center justify-between">
+                            <a href="#" class="bg-[#DCFCE7] text-[#15803D] py-1 px-3 font-medium">Fruit Tree</a>
+                            <p class="font-semibold text-xl">৳<span>500</span></p>
+                        </div>
+                        <button class="bg-[#15803D] text-white text-xl font-medium py-3 rounded-4xl cursor-pointer">Add
+                            to Cart</button>
+                    </div> -->
+
+                </section>
+                <aside class="">
+                    <h1 class="text-2xl font-medium">Your Cart</h1>
+                </aside>
+            </div>
+        </section>
+
+        <!-- About Campaign Section  -->
+        <section class="about-campaign">
+            <h1 class="text-center font-medium">About the Campaign</h1>
+        </section>
+    </main>
 
 
     <script src="js/script.js"></script>
-  </body>
+</body>
+
 </html>
