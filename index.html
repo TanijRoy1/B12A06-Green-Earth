@@ -73,9 +73,9 @@
     <main class="w-11/12 mx-auto">
         <!-- main section  -->
         <section class="main py-6">
-            <h1 class="text-center py-6 text-[#1F2937] text-2xl font-semibold">Choose Your Trees</h1>
+            <h1 class="text-center py-8 text-[#1F2937] text-2xl font-semibold">Choose Your Trees</h1>
             <div class="flex justify-between gap-5">
-                <aside class="col-span-4 w-[15%]">
+                <aside class="col-span-4 w-[10%]">
                     <h1 class="text-2xl font-medium">Categories</h1>
                     <ul id="category-container" class="py-4">
                         <!-- <li onclick="loadPlants()"
@@ -86,7 +86,7 @@
                     </ul>
                 </aside>
                 <!-- card section  -->
-                <section id="items-container" class="flex-1 grid grid-cols-3 gap-3 items-stretch">
+                <section id="items-container" class="flex-1 grid grid-cols-3 gap-3 items-stretch max-h-[1300px] overflow-auto">
 
                     <!-- <div class="item rounded-xl bg-white p-4 flex flex-col gap-4 h-full">
                         <img src="" class="w-[100%] h-[40%] rounded-xl object-cover" alt="">
@@ -104,15 +104,30 @@
                     </div> -->
 
                 </section>
-                <aside class="w-[18%]">
+                <aside class="w-[10%]">
                     <h1 class="text-2xl font-medium">Your Cart</h1>
                 </aside>
             </div>
         </section>
 
         <!-- About Campaign Section  -->
-        <section class="about-campaign">
-            <h1 class="text-center font-medium">About the Campaign</h1>
+        <section class="about-campaign lg:w-8/12 mx-auto py-12">
+            <h1 class="text-center py-8 text-[#1F2937] text-2xl font-semibold">About the Campaign</h1>
+            <div class="flex justify-between items-center gap-8">
+                <div class="lg:w-[40%] rounded-2xl">
+                    <img src="./assets/about.png" class="rounded-2xl" alt="about">
+                </div>
+                <div class="flex-1 space-y-4">
+                    <p>
+                        Green Earth is a global tree plantation initiative dedicated to fighting climate change. Since our start, we’ve planted over 500,000 trees worldwide. By joining our campaign, you help restore forests, create habitats for wildlife, and combat global warming.
+                    </p>
+                    <ul class="ps-5.5">
+                        <li class="list-disc">Restoration of natural habitats</li>
+                        <li class="list-disc">Improvement of air quality</li>
+                        <li class="list-disc">Support for local communities</li>
+                    </ul>
+                </div>
+            </div>
         </section>
     </main>
 

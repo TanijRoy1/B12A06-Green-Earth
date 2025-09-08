@@ -34,7 +34,7 @@ const displayPlants = (plants) => {
   plants.forEach((plant) => {
     const div = document.createElement("div");
     div.innerHTML = `<div class="item rounded-xl bg-white shadow-md p-4 flex flex-col gap-4 h-full">
-                        <img src="${plant.image}" class="w-full h-[360px] rounded-xl object-cover" alt="">
+                        <img src="${plant.image}" class="w-full h-[300px] rounded-xl object-cover" alt="">
                         <h1 class="text-[#1F2937] font-semibold text-xl cursor-pointer">${plant.name}</h1>
                         <p class="font-medium text-[#1F2937] flex-1">
                             ${plant.description}
@@ -43,7 +43,7 @@ const displayPlants = (plants) => {
                             <a href="#" class="bg-[#DCFCE7] text-[#15803D] py-1 px-3 font-medium">${plant.category}</a>
                             <p class="font-semibold text-xl">৳<span>${plant.price}</span></p>
                         </div>
-                        <button class="bg-[#15803D] text-white text-xl font-medium py-3 rounded-4xl cursor-pointer">Add
+                        <button class="bg-[#15803D] text-white text-xl font-medium py-2 rounded-4xl cursor-pointer">Add
                             to Cart</button>
                     </div>`;
     container.appendChild(div);
