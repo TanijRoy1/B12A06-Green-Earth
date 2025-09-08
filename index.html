@@ -18,6 +18,7 @@
 
 <body class="bg-[#DCFCE7]">
     <header>
+        <!-- navbar -->
         <nav class="bg-[#15803D]">
             <div class="navbar w-11/12 mx-auto shadow-sm py-3.5">
                 <div class="navbar-start">
@@ -55,7 +56,7 @@
         </nav>
 
         <!-- Banner Section  -->
-        <section class="bannder-section flex items-center justify-between bg-[#CFF0DC] gap-5">
+        <section class="bannder-section flex md:flex-row flex-col items-center justify-between bg-[#CFF0DC] gap-5">
             <div class="">
                 <img src="./assets/hero-leaf1.png" alt="hero-leaf1">
             </div>
@@ -68,18 +69,19 @@
                     class="bg-[#FACC15] text-[#15803D] px-5 py-3 text-xl font-semibold rounded-4xl self-center cursor-pointer hover:bg-[#d4ab07]">Get
                     Involved</button>
             </div>
-            <div>
+            <div class="md:block hidden">
                 <img src="./assets/hero-leaf2.png" alt="hero-leaf2">
             </div>
         </section>
     </header>
 
     <main class="">
+
         <!-- main section  -->
         <section class="main py-6 w-11/12 mx-auto">
             <h1 class="text-center py-8 text-[#1F2937] text-2xl font-bold">Choose Your Trees</h1>
-            <div class="flex justify-between gap-5">
-                <aside class="col-span-4 w-[12%]">
+            <div class="flex md:flex-row flex-col justify-between gap-5">
+                <aside class="md:w-[12%]">
                     <h1 class="text-2xl font-medium">Categories</h1>
                     <ul id="category-container" class="py-4">
                         <!-- <li onclick="loadPlants()"
@@ -91,7 +93,7 @@
                 </aside>
                 <!-- card section  -->
                 <section id="items-container"
-                    class="flex-1 grid grid-cols-3 gap-3 items-stretch max-h-[1300px] overflow-auto">
+                    class="flex-1 grid md:grid-cols-3 grid-cols-1 gap-3 items-stretch max-h-[1300px] overflow-auto">
 
                     <!-- <div class="item rounded-xl bg-white p-4 flex flex-col gap-4 h-full">
                         <img src="" class="w-[100%] h-[40%] rounded-xl object-cover" alt="">
@@ -109,7 +111,7 @@
                     </div> -->
 
                 </section>
-                <aside class="w-[16%] bg-white p-3.5 rounded">
+                <aside class="md:w-[16%] bg-white p-3.5 rounded">
                     <h1 class="text-2xl font-medium">Your Cart</h1>
                     <div class="add-cart-container mt-4">
                         <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
@@ -156,9 +158,9 @@
         </section>
 
         <!-- About Campaign Section  -->
-        <section class="about-campaign lg:w-9/12 mx-auto py-12">
+        <section class="about-campaign md:w-9/12 w-11/12 mx-auto py-12">
             <h1 class="text-center py-8 text-[#1F2937] text-2xl font-bold">About the Campaign</h1>
-            <div class="flex justify-between items-center gap-8">
+            <div class="flex md:flex-row flex-col justify-between items-center gap-8">
                 <div class="lg:w-[40%] rounded-2xl">
                     <img src="./assets/about.png" class="rounded-2xl" alt="about">
                 </div>
@@ -180,8 +182,7 @@
         <!-- Our impact section  -->
         <section class="impact-section py-16 bg-[#CFF0DC]">
             <h1 class="text-center pb-8 text-[#1F2937] text-2xl font-bold">Our Impact</h1>
-            <div class="card-container grid grid-cols-3 gap-10 w-11/12 mx-auto">
-
+            <div class="card-container grid md:grid-cols-3 grid-cols-1 gap-10 w-11/12 mx-auto">
                 <div
                     class="card p-10 bg-white space-y-2 text-center shadow-md cursor-pointer hover:scale-105 hover:bg-[#21c75e60] transition duration-300 ease-in-out group">
                     <h1 class="text-[#15803D] text-2xl font-semibold group-hover:scale-105">500K+</h1>
@@ -205,8 +206,7 @@
         <section class="plant-today bg-[#166534] py-16">
             <h1 class="text-2xl text-white font-semibold text-center pb-8">Plant a Tree Today</h1>
 
-
-            <form class="bg-[#15803D] max-w-[650px] p-10 mx-auto flex flex-col gap-3 rounded-2xl">
+            <form class="bg-[#15803D] max-w-[650px] md:w-full w-11/12 p-10 mx-auto flex flex-col gap-3 rounded-2xl">
                 <input type="text" name="" id="" placeholder="Your Name"
                     class="bg-white p-3 rounded-xl outline-none border-none">
                 <input type="email" name="" id="" placeholder="Your Email Address"
@@ -225,7 +225,6 @@
 
 
         </section>
-
 
     </main>
 

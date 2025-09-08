@@ -67,5 +67,5 @@ const activeClassAdd = (id) => {
 }
 
 
-// loadAllPlants();
+loadAllPlants();
 loadCategories();
