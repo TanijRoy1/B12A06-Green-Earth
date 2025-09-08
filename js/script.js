@@ -41,8 +41,9 @@ const displayPlants = (plants) => {
                             <a href="#" class="bg-[#DCFCE7] text-[#15803D] py-1 px-3 font-medium rounded">${plant.category}</a>
                             <p class="font-semibold text-xl">৳<span>${plant.price}</span></p>
                         </div>
-                        <button class="bg-[#15803D] text-white 2xl:text-xl font-medium py-1.5 rounded-4xl cursor-pointer">Add
-                            to Cart</button>
+                        <button onclick="addToCart('${plant.id}')" class="add-cart-btn bg-[#15803D] text-white 2xl:text-xl font-medium py-1.5 rounded-4xl cursor-pointer">
+                            Add to Cart
+                        </button>
                     </div>`;
     container.appendChild(div);
   });
@@ -74,7 +75,7 @@ const loadDetails = async (id) => {
 const displayDetails = (plant) => {
   const modalContainer = document.getElementById("my_modal_5");
   modalContainer.innerHTML = `<div class="modal-box">
-            <h3 class="text-lg font-bold py-1 pb-2.5">${plant.name}</h3>
+            <h3 class="text-2xl font-bold py-1 pb-2.5">${plant.name}</h3>
             <img src="${plant.image}" class="w-full h-[260px] object-cover rounded-xl py-1" alt="Plant">
             <p class="py-1">
                 <span class="font-bold">Category: </span>${plant.category}
@@ -92,6 +93,84 @@ const displayDetails = (plant) => {
         </div>`;
   my_modal_5.showModal();
 }
+
+// Add to cart functionality 
+// const items = document.querySelectorAll(".item");
+// items.forEach(item => {
+//   console.log(item);
+// });
+// const items2 = document.getElementsByClassName("item");
+// for (const item of items2) {
+//   console.log(item);
+// }
+const addCartData = [];
+const ids = [];
+
+const addToCart = async (id) => {
+  const url = `https://openapi.programming-hero.com/api/plant/${id}`;
+  const res = await fetch(url);
+  const data = await res.json();
+  const plant = data.plants;
+
+  ids.push(parseInt(id));
+  const quantity = ids.filter(existingid => existingid === parseInt(id)).length;
+  // console.log(quantity);
+  
+  if (quantity > 1) {
+    // console.log(addCartData);
+    addCartData.forEach(data => {
+      if(data.id == id) {
+        data.quantity = quantity;
+        // console.log(data);
+      }
+    });
+  } else {
+    const cartData = {
+      id: parseInt(plant.id),
+      name: plant.name,
+      price: parseInt(plant.price),
+      quantity: quantity
+    }
+    addCartData.push(cartData);
+  }
+  
+  const container = document.getElementById("add-cart-container");
+  container.innerHTML = "";
+  
+  let sum = 0;
+  addCartData.forEach(data => {
+    // console.log(data);
+    container.innerHTML += `<div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
+                            <div>
+                                <h1 class="text-xl font-semibold">${data.name}</h1>
+                                <p class="font-medium text-xl opacity-50">
+                                    ৳<span>${data.price}</span> <i class="fa-solid fa-xmark text-[15px]"></i> ${data.quantity}
+                                </p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
+                            </div>
+                        </div>`;
+    // console.log(data.price);
+    // console.log(quantity);
+    sum += data.price*data.quantity;
+  });
+  
+  // console.log(sum);
+  if (addCartData.length === 0) {
+    document.getElementById("total").classList.add("hidden");
+  } else {
+    document.getElementById("total").classList.remove("hidden");
+    document.getElementById("total-price").innerText = sum;
+  }
+
+}
+addToCart(1);
+// addToCart(2);
+// addToCart(3);
+// addToCart(1);
+// addToCart(1);
+
 
 loadAllPlants();
 loadCategories();
