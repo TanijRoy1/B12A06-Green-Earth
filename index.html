@@ -8,6 +8,10 @@
     <!-- daisyUI + tailwindcss -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- vanila css  -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -19,8 +23,8 @@
                 <div class="navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
-                                stroke="currentColor">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 invert-100" fill="none"
+                                viewBox="0 0 24 24" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                     d="M4 6h16M4 12h8m-8 6h16" />
                             </svg>
@@ -105,8 +109,48 @@
                     </div> -->
 
                 </section>
-                <aside class="w-[12%]">
+                <aside class="w-[16%] bg-white p-3.5 rounded">
                     <h1 class="text-2xl font-medium">Your Cart</h1>
+                    <div class="add-cart-container mt-4">
+                        <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
+                            <div>
+                                <h1 class="text-xl font-semibold">Mango Tree</h1>
+                                <p class="font-medium text-xl opacity-50">
+                                    ৳<span>500</span> <i class="fa-solid fa-xmark text-[15px]"></i> 1
+                                </p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
+                            <div>
+                                <h1 class="text-xl font-semibold">Mango Tree</h1>
+                                <p class="font-medium text-xl opacity-50">
+                                    ৳<span>500</span> <i class="fa-solid fa-xmark text-[15px]"></i> 1
+                                </p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
+                            </div>
+                        </div>
+                        <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
+                            <div>
+                                <h1 class="text-xl font-semibold">Mango Tree</h1>
+                                <p class="font-medium text-xl opacity-50">
+                                    ৳<span>500</span> <i class="fa-solid fa-xmark text-[15px]"></i> 1
+                                </p>
+                            </div>
+                            <div>
+                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="total flex items-center justify-between mt-2.5">
+                        <p class="font-medium text-xl">Total:</p>
+                        <p class="font-medium text-xl">৳<span>1000</span></p>
+                    </div>
+            
                 </aside>
             </div>
         </section>
@@ -184,6 +228,10 @@
 
 
     </main>
+
+    <footer class="bg-[#14532D] py-6">
+        <p class="text-center text-white">© 2025 Green Earth. All Rights Reserved.</p>
+    </footer>
 
 
     <script src="js/script.js"></script>
