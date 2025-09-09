@@ -95,15 +95,7 @@ const displayDetails = (plant) => {
 }
 
 // Add to cart functionality 
-// const items = document.querySelectorAll(".item");
-// items.forEach(item => {
-//   console.log(item);
-// });
-// const items2 = document.getElementsByClassName("item");
-// for (const item of items2) {
-//   console.log(item);
-// }
-const addCartData = [];
+let addCartData = [];
 const ids = [];
 
 const addToCart = async (id) => {
@@ -113,15 +105,12 @@ const addToCart = async (id) => {
   const plant = data.plants;
 
   ids.push(parseInt(id));
-  const quantity = ids.filter(existingid => existingid === parseInt(id)).length;
-  // console.log(quantity);
+  const quantity = ids.filter(existingId => existingId === parseInt(id)).length;
   
   if (quantity > 1) {
-    // console.log(addCartData);
     addCartData.forEach(data => {
       if(data.id == id) {
         data.quantity = quantity;
-        // console.log(data);
       }
     });
   } else {
@@ -139,8 +128,7 @@ const addToCart = async (id) => {
   
   let sum = 0;
   addCartData.forEach(data => {
-    // console.log(data);
-    container.innerHTML += `<div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
+    container.innerHTML += `<div id="add-cart-${data.id}" class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
                             <div>
                                 <h1 class="text-xl font-semibold">${data.name}</h1>
                                 <p class="font-medium text-xl opacity-50">
@@ -148,15 +136,13 @@ const addToCart = async (id) => {
                                 </p>
                             </div>
                             <div>
-                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
+                                <i onclick="closeItem('${data.id}')" class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
                             </div>
                         </div>`;
-    // console.log(data.price);
-    // console.log(quantity);
-    sum += data.price*data.quantity;
+  
+    sum += data.price * data.quantity;
   });
   
-  // console.log(sum);
   if (addCartData.length === 0) {
     document.getElementById("total").classList.add("hidden");
   } else {
@@ -165,11 +151,23 @@ const addToCart = async (id) => {
   }
 
 }
-addToCart(1);
-// addToCart(2);
-// addToCart(3);
-// addToCart(1);
-// addToCart(1);
+// close cart functionality 
+const closeItem = (id) => {
+  document.getElementById(`add-cart-${id}`).remove();
+
+  addCartData = addCartData.filter(data => data.id != id);
+  let sum = 0;
+  addCartData.forEach(data => {
+    sum += data.price * data.quantity;
+  });
+  console.log(addCartData.length);
+  if (addCartData.length === 0) {
+    document.getElementById("total").classList.add("hidden");
+  } else {
+    document.getElementById("total").classList.remove("hidden");
+    document.getElementById("total-price").innerText = sum;
+  }
+}
 
 
 loadAllPlants();
