@@ -57,11 +57,11 @@
 
         <!-- Banner Section  -->
         <section
-            class="bannder-section flex md:flex-row flex-col md:pb-0 pb-8 items-center justify-between bg-[#CFF0DC] gap-5">
-            <div class="">
+            class="bannder-section flex md:flex-row flex-col md:pb-0 pb-8 items-stretch justify-between bg-[#CFF0DC] gap-5">
+            <div class="flex items-end">
                 <img src="./assets/hero-leaf1.png" alt="hero-leaf1">
             </div>
-            <div class="text-center flex flex-col gap-4">
+            <div class="text-center flex flex-col gap-4 justify-center py-6 md:px-0 px-4">
                 <h1 class="text-[#1F2937] font-bold text-4xl">Plant a Tree, Grow a Future</h1>
                 <p class="text-[#1F2937] font-medium">
                     Join our mission to plant 1 million trees and make the Earth greener for future generations.
@@ -70,7 +70,7 @@
                     class="bg-[#FACC15] text-[#15803D] px-5 py-3 text-xl font-semibold rounded-4xl self-center cursor-pointer hover:bg-[#d4ab07]">Get
                     Involved</button>
             </div>
-            <div class="md:block hidden">
+            <div class="md:flex hidden items-end">
                 <img src="./assets/hero-leaf2.png" alt="hero-leaf2">
             </div>
         </section>
@@ -82,22 +82,21 @@
         <section class="main py-6 w-11/12 mx-auto">
             <h1 class="text-center py-8 text-[#1F2937] text-2xl font-bold">Choose Your Trees</h1>
             <div class="flex md:flex-row flex-col justify-between gap-5">
-                <aside class="md:w-[12%]">
+                <aside class="xl:w-[13%] lg:w-[16%]">
                     <h1 class="text-2xl font-medium">Categories</h1>
+                    <!-- cattegory container  -->
                     <ul id="category-container" class="py-4 hidden">
-                        <!-- <li onclick="loadPlants()"
-                            class="text-xl font-medium mt-1 py-2.5 px-2 rounded cursor-pointer hover:bg-[#15803D] hover:text-white">
-                            Fruit Tree
-                        </li> -->
+                        
                     </ul>
                     <!-- loading dots -->
-                    <div id="loading-dots" class="text-center">
+                    <div id="loading-dots" class="text-center pt-8">
                         <span class="loading loading-dots loading-xl"></span>
                     </div>
                 </aside>
-                <!-- card section  -->
-                <section id="items-container" class="hidden">
-                    <div id="items-container-inner" class="flex-1 grid md:grid-cols-3 grid-cols-1 gap-3 items-stretch max-h-[1300px] overflow-auto">
+
+                <!-- card section : items container -->
+                <section id="items-container" class="flex-1">
+                    <div id="items-container-inner" class="grid xl:grid-cols-3 lg:grid-cols-2 grid-cols-1 gap-3 items-stretch max-h-[1300px] overflow-auto">
 
 
                     </div>
@@ -108,7 +107,7 @@
                 </div>
 
                 <!-- add to cart section  -->
-                <aside class="md:w-[16%] bg-white p-3.5 rounded">
+                <aside class="xl:w-[18%] lg:w-[24%] md:w-[31%] bg-white p-3.5 rounded">
                     <h1 class="text-2xl font-medium">Your Cart</h1>
                     <div id="add-cart-container" class=" mt-4">
 
@@ -125,9 +124,9 @@
         </section>
 
         <!-- About Campaign Section  -->
-        <section class="about-campaign md:w-9/12 w-11/12 mx-auto py-12">
+        <section class="about-campaign lg:w-9/12 w-11/12 mx-auto py-12">
             <h1 class="text-center py-8 text-[#1F2937] text-2xl font-bold">About the Campaign</h1>
-            <div class="flex md:flex-row flex-col justify-between items-center gap-8">
+            <div class="flex lg:flex-row flex-col justify-between items-center gap-8">
                 <div class="lg:w-[40%] rounded-2xl">
                     <img src="./assets/about.png" class="rounded-2xl" alt="about">
                 </div>

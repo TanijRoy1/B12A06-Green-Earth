@@ -36,10 +36,10 @@ const displayPlants = (plants) => {
   container.innerHTML = "";
   plants.forEach((plant) => {
     const div = document.createElement("div");
-    div.innerHTML = `<div class="item rounded-xl bg-white shadow-md p-4 flex flex-col gap-2.5 h-full max-h-[470px]">
+    div.innerHTML = `<div class="item rounded-xl bg-white shadow-md p-4 flex flex-col gap-2.5 h-full max-h-[480px]">
                         <img src="${plant.image}" class="w-full h-[200px] rounded-xl object-cover" alt="">
                         <h1 onclick="loadDetails('${plant.id}')" class="text-[#1F2937] font-semibold text-xl cursor-pointer">${plant.name}</h1>
-                        <p class="font-medium text-[#1F2937] 2xl:text-[16px] text-[12px] flex-1">
+                        <p class="font-medium text-[#1F2937] 2xl:text-[14px] text-[12px] flex-1">
                             ${plant.description}
                         </p>
                         <div class="flex items-center justify-between">
@@ -135,11 +135,11 @@ const addToCart = async (id) => {
   
   let sum = 0;
   addCartData.forEach(data => {
-    container.innerHTML += `<div id="add-cart-${data.id}" class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
+    container.innerHTML += `<div id="add-cart-${data.id}" class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between gap-1 p-2 py-1 rounded">
                             <div>
-                                <h1 class="text-xl font-semibold">${data.name}</h1>
-                                <p class="font-medium text-xl opacity-50">
-                                    ৳<span>${data.price}</span> <i class="fa-solid fa-xmark text-[15px]"></i> ${data.quantity}
+                                <h1 class="2xl:text-xl font-semibold">${data.name}</h1>
+                                <p class="font-medium 2xl:text-xl opacity-50">
+                                    ৳<span>${data.price}</span> <i class="fa-solid fa-xmark 2xl:text-[15px] text-[13px]"></i> ${data.quantity}
                                 </p>
                             </div>
                             <div>
