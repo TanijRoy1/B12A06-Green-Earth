@@ -1,4 +1,4 @@
-## DOM Selection & Events
+## JavaScript ES6 Concepts
 
 
 ## 1. What is the difference between `var`, `let`, and `const`?
