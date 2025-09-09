@@ -101,9 +101,9 @@ const displayDetails = (plant) => {
   my_modal_5.showModal();
 }
 
-// Add to cart functionality 
+// Add to cart functionality : Challenges Part
 let addCartData = [];
-const ids = [];
+let ids = [];
 
 const addToCart = async (id) => {
   const url = `https://openapi.programming-hero.com/api/plant/${id}`;
@@ -139,7 +139,7 @@ const addToCart = async (id) => {
                             <div>
                                 <h1 class="2xl:text-xl font-semibold">${data.name}</h1>
                                 <p class="font-medium 2xl:text-xl opacity-50">
-                                    ৳<span>${data.price}</span> <i class="fa-solid fa-xmark 2xl:text-[15px] text-[13px]"></i> ${data.quantity}
+                                    ৳<span>${data.price}</span> x ${data.quantity}
                                 </p>
                             </div>
                             <div>
@@ -152,6 +152,7 @@ const addToCart = async (id) => {
   
   if (addCartData.length === 0) {
     document.getElementById("total").classList.add("hidden");
+    ids = [];
   } else {
     document.getElementById("total").classList.remove("hidden");
     document.getElementById("total-price").innerText = sum;
@@ -163,13 +164,16 @@ const closeItem = (id) => {
   document.getElementById(`add-cart-${id}`).remove();
 
   addCartData = addCartData.filter(data => data.id != id);
+  ids = ids.filter(existingId => existingId != id);
+  
   let sum = 0;
   addCartData.forEach(data => {
     sum += data.price * data.quantity;
   });
-  console.log(addCartData.length);
+  
   if (addCartData.length === 0) {
     document.getElementById("total").classList.add("hidden");
+    ids = [];
   } else {
     document.getElementById("total").classList.remove("hidden");
     document.getElementById("total-price").innerText = sum;
