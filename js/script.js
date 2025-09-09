@@ -1,6 +1,8 @@
 console.log("JS writting");
 
+// Load categories 
 const loadCategories = async () => {
+  showLoadingDots(true);
   const url = "https://openapi.programming-hero.com/api/categories";
   const res = await fetch(url);
   const data = await res.json();
@@ -16,9 +18,12 @@ const displayCategories = (catagories) => {
                             ${category.category_name}
                     </li>`;
   });
+  showLoadingDots(false);
 };
 
+// Load Plants 
 const loadPlants = async (id) => {
+  showLoadingSpinner(true);
   const url = `https://openapi.programming-hero.com/api/category/${id}`;
   const res = await fetch(url);
   const data = await res.json();
@@ -27,11 +32,11 @@ const loadPlants = async (id) => {
   activeClassAdd(id);
 };
 const displayPlants = (plants) => {
-  const container = document.getElementById("items-container");
+  const container = document.getElementById("items-container-inner");
   container.innerHTML = "";
   plants.forEach((plant) => {
     const div = document.createElement("div");
-    div.innerHTML = `<div class="item rounded-xl bg-white shadow-md p-4 flex flex-col gap-2.5 h-full max-h-[450px]">
+    div.innerHTML = `<div class="item rounded-xl bg-white shadow-md p-4 flex flex-col gap-2.5 h-full max-h-[470px]">
                         <img src="${plant.image}" class="w-full h-[200px] rounded-xl object-cover" alt="">
                         <h1 onclick="loadDetails('${plant.id}')" class="text-[#1F2937] font-semibold text-xl cursor-pointer">${plant.name}</h1>
                         <p class="font-medium text-[#1F2937] 2xl:text-[16px] text-[12px] flex-1">
@@ -41,16 +46,18 @@ const displayPlants = (plants) => {
                             <a href="#" class="bg-[#DCFCE7] text-[#15803D] py-1 px-3 font-medium rounded">${plant.category}</a>
                             <p class="font-semibold text-xl">৳<span>${plant.price}</span></p>
                         </div>
-                        <button onclick="addToCart('${plant.id}')" class="add-cart-btn bg-[#15803D] text-white 2xl:text-xl font-medium py-1.5 rounded-4xl cursor-pointer">
+                        <button onclick="addToCart('${plant.id}')" class="add-cart-btn bg-[#15803D] border-2 border-[#15803D] hover:bg-white hover:text-[#15803D] text-white 2xl:text-xl font-medium py-1.5 rounded-4xl cursor-pointer">
                             Add to Cart
                         </button>
                     </div>`;
     container.appendChild(div);
   });
+  showLoadingSpinner(false);
 };
 
 // load All Plants
 const loadAllPlants = () => {
+  showLoadingSpinner(true);
   const url = "https://openapi.programming-hero.com/api/plants";
   fetch(url)
     .then((res) => res.json())
@@ -169,6 +176,26 @@ const closeItem = (id) => {
   }
 }
 
+// loading spinner on main container
+const showLoadingSpinner = (status) => {
+  if (status) {
+    document.getElementById("loading").classList.remove("hidden");
+    document.getElementById("items-container").classList.add("hidden");
+  } else {
+    document.getElementById("loading").classList.add("hidden");
+    document.getElementById("items-container").classList.remove("hidden");
+  }
+}
+// loading dots on categories
+const showLoadingDots = (status) => {
+  if (status) {
+    document.getElementById("loading-dots").classList.remove("hidden");
+    document.getElementById("category-container").classList.add("hidden");
+  } else {
+    document.getElementById("loading-dots").classList.add("hidden");
+    document.getElementById("category-container").classList.remove("hidden");
+  }
+}
 
 loadAllPlants();
 loadCategories();

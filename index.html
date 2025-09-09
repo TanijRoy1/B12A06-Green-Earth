@@ -84,76 +84,40 @@
             <div class="flex md:flex-row flex-col justify-between gap-5">
                 <aside class="md:w-[12%]">
                     <h1 class="text-2xl font-medium">Categories</h1>
-                    <ul id="category-container" class="py-4">
+                    <ul id="category-container" class="py-4 hidden">
                         <!-- <li onclick="loadPlants()"
                             class="text-xl font-medium mt-1 py-2.5 px-2 rounded cursor-pointer hover:bg-[#15803D] hover:text-white">
                             Fruit Tree
                         </li> -->
-
                     </ul>
+                    <!-- loading dots -->
+                    <div id="loading-dots" class="text-center">
+                        <span class="loading loading-dots loading-xl"></span>
+                    </div>
                 </aside>
                 <!-- card section  -->
-                <section id="items-container"
-                    class="flex-1 grid md:grid-cols-3 grid-cols-1 gap-3 items-stretch max-h-[1300px] overflow-auto">
+                <section id="items-container" class="hidden">
+                    <div id="items-container-inner" class="flex-1 grid md:grid-cols-3 grid-cols-1 gap-3 items-stretch max-h-[1300px] overflow-auto">
 
-                    <!-- <div class="item rounded-xl bg-white p-4 flex flex-col gap-4 h-full">
-                        <img src="" class="w-[100%] h-[40%] rounded-xl object-cover" alt="">
-                        <h1 class="text-[#1F2937] font-semibold text-xl cursor-pointer">Mango Tree</h1>
-                        <p class="font-medium text-[#1F2937] flex-1">
-                            A fast-growing tropical tree that produces delicious, juicy mangoes during summer. Its dense
-                            green
-                        </p>
-                        <div class="flex items-center justify-between">
-                            <a href="#" class="bg-[#DCFCE7] text-[#15803D] py-1 px-3 font-medium">Fruit Tree</a>
-                            <p class="font-semibold text-xl">৳<span>500</span></p>
-                        </div>
-                        <button class="bg-[#15803D] text-white text-xl font-medium py-3 rounded-4xl cursor-pointer">Add
-                            to Cart</button>
-                    </div> -->
 
+                    </div>
                 </section>
+                <!-- Loading Spinner -->
+                <div id="loading" class="mt-20 mx-auto">
+                    <span class="loading loading-spinner loading-xl"></span>
+                </div>
+
+                <!-- add to cart section  -->
                 <aside class="md:w-[16%] bg-white p-3.5 rounded">
                     <h1 class="text-2xl font-medium">Your Cart</h1>
                     <div id="add-cart-container" class=" mt-4">
 
-                        <!-- <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
-                            <div>
-                                <h1 class="text-xl font-semibold">Mango Tree</h1>
-                                <p class="font-medium text-xl opacity-50">
-                                    ৳<span>500</span> <i class="fa-solid fa-xmark text-[15px]"></i> 1
-                                </p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
-                            </div>
-                        </div>
-                        <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
-                            <div>
-                                <h1 class="text-xl font-semibold">Mango Tree</h1>
-                                <p class="font-medium text-xl opacity-50">
-                                    ৳<span>500</span> <i class="fa-solid fa-xmark text-[15px]"></i> 1
-                                </p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
-                            </div>
-                        </div>
-                        <div class="add-cart-item bg-[#DCFCE7] mt-2 flex items-center justify-between p-2 py-1 rounded">
-                            <div>
-                                <h1 class="text-xl font-semibold">Mango Tree</h1>
-                                <p class="font-medium text-xl opacity-50">
-                                    ৳<span>500</span> <i class="fa-solid fa-xmark text-[15px]"></i> 1
-                                </p>
-                            </div>
-                            <div>
-                                <i class="fa-solid fa-xmark hover:scale-105 cursor-pointer"></i>
-                            </div>
-                        </div> -->
-
                     </div>
-                    <div id="total" class="flex items-center justify-between mt-2.5 hidden">
-                        <p class="font-medium text-xl">Total:</p>
+                    <div id="total" class="hidden">
+                        <div class="flex items-center justify-between mt-2.5">
+                            <p class="font-medium text-xl">Total:</p>
                         <p class="font-medium text-xl">৳<span id="total-price">0</span></p>
+                        </div>
                     </div>
 
                 </aside>
